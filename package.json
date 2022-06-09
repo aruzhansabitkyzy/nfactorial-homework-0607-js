@@ -14,6 +14,7 @@
     "commander": "^9.3.0"
   },
   "bin": {
-    "tea": "bin/index.js"
-}
+    "tea-cli": "bin/index.js"
+  }, 
+   "type" : "Commonjs"
 }
