@@ -1,14 +1,14 @@
 #! /usr/bin/env node
-const { program }  = require('commander');
+const { program } = require('commander');
 const { listMenu, deleteItem, createItem } = require('../products.js');
 const { getOrder } = require('../customers.js');
 
-program 
+program
     .command('list')
     .description('List the menu')
     .action(listMenu)
 
-program 
+program
     .command('deleteItem')
     .argument("<string>", "name")
     .description('Deletes the item from the menu')
@@ -16,10 +16,13 @@ program
 
 program
     .command('createItem')
+    .argument("<string>", "name")
+    .argument("<number>", "price")
+    .argument("<string>", "flavor")
     .description('Creates an item to the menu')
     .action(createItem)
 
-program 
+program
     .command('order')
     .description('Make your order')
     .action(getOrder)

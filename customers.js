@@ -9,24 +9,23 @@ function allowedd() {
         allowed = true;
     }
     if(!allowed) {
-        console.log("Sorry we are closed!");
+        console.log("Sorry we are closed now!");
         return false;
     }
 }
 
 function getOrder() {
-    // if(allowedd()){
-    // str = arguments[1]['args'][0].trim()
+    if(allowedd()){
     for(let i=0;i<2;i++) {
         if(arguments[1]['args'] !== undefined) {
            makeOrder(arguments[1]['args']);
             break;
         }
-    // }
+    }
 }
 }
 function makeOrder(...items) {
-    let price = 0;
+    let price = Number(0);
     items[0].forEach((item) => {
         itemObj = menu.filter(function (el) {
             if (el.name == item) {
@@ -34,8 +33,8 @@ function makeOrder(...items) {
             }
         });
         let data = itemObj[0];
-        price += data.price;
+        price += Number(data.price);
     });
-    console.log(chalk.greenBright(`Your order is  ${items}  for a price of ${price + 0} tenge`));
+    console.log(chalk.greenBright(`Your order is  ${items}  for a price of ${price} tenge`));
 }
 module.exports = {getOrder};
