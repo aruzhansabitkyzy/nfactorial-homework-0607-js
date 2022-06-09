@@ -10,11 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.0.1",
-    "commander": "^9.3.0"
+    "chalk": "^4.1.2",
+    "commander": "^9.3.0",
+    "config": "^3.3.7"
   },
   "bin": {
     "tea-cli": "bin/index.js"
-  }, 
-   "type" : "Commonjs"
+  },
+  "type": "CommonJS"
 }
